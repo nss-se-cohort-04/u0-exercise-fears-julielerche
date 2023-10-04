@@ -16,7 +16,10 @@ public class PeopleReader {
 
         List<String> lines = Files.readAllLines(Path.of(filename));
         for (String line : lines) {
+            //String[] subStrings = line.split(" ");
+            
             people.add(new Person(line));
+            //people.add(new Person(subStrings[0], subStrings[2], subStrings[1], subStrings[3],subStrings[4]));
         }
 
         return people;
