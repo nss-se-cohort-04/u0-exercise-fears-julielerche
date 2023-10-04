@@ -17,13 +17,14 @@ public class App {
         System.out.println(fearMap);
         
         for (String fear: fearMap.keySet()){
-            System.out.println(fear);
+            System.out.println("-----------------");
+            System.out.println(fear.toUpperCase());
             peoplePerFear = fearMap.get(fear);
             for (Person p : peoplePerFear){
                 System.out.println(p);
 
             }
-            
+            System.out.println("-----------------");
 
 
         }
@@ -35,8 +36,9 @@ public class App {
     public static Map<String, List<Person>> groupByFear(List<Person> people) {
     // ...
         Map<String, List<Person>> fearMap = new HashMap<String, List<Person>>();
-        List<Person> peoplePerFear = new ArrayList<Person>();
+        //List<Person> peoplePerFear = new ArrayList<Person>();
         for (Person p : people){
+            List<Person> peoplePerFear = new ArrayList<Person>();
             String fear = p.getFear();
             //System.out.println("Current fear:" + fear);
             if(fearMap.containsKey(fear)){
@@ -50,7 +52,7 @@ public class App {
                 fearMap.put(fear, peoplePerFear);
                 
             }
-            //peoplePerFear.clear();
+            
         }
 
 
